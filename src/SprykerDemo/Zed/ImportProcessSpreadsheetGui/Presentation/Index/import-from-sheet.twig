@@ -1,0 +1,41 @@
+{% extends '@Gui/Layout/layout.twig' %}
+
+{% set widget_title = 'product_upload.spreadsheet.import_types_page_headline' | trans %}
+{% block section_title %}{{ widget_title }}{% endblock %}
+
+{% block action %}
+    {{ backActionButton('/import-process-spreadsheet-gui/index/select-sheet', 'Select spreadsheet' | trans) }}
+{% endblock %}
+
+{% block content %}
+    {% embed '@Gui/Partials/widget.twig' with { widget_title: 'product_upload.spreadsheet.import_types_box_headline' | trans } %}
+        {% block widget_content %}
+            <div class="gray-bg wrapper-content">
+                <h4>{{ 'product_upload.spreadsheet.import_Types_description_headline' | trans }}</h4>
+
+                <p>{{ 'product_upload.spreadsheet.import_Types_description_text' | trans }}</p>
+            </div>
+
+            {% block form %}
+                {{ form_start(form) }}
+
+                {{ form_row(form.importTypes) }}
+
+                <input type="submit" class="btn btn-create safe-submit" value="{{ 'Import data' | trans }}"/>
+
+                {{ form_end(form) }}
+            {% endblock %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block head_css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ assetsPath('css/import-process-gui.css') }}" />
+{% endblock %}
+
+{% block footer_js %}
+    {{ parent() }}
+    <script src="{{ assetsPath('js/import-process-gui.js') }}"></script>
+{% endblock %}
+

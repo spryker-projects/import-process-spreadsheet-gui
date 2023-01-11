@@ -1,0 +1,36 @@
+{
+    "name": "spryker-projects/import-process-spreadsheet-gui",
+    "type": "library",
+    "version": "1.0.0",
+    "description": "ImportProcessSpreadsheetGui module",
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.3",
+        "spryker/session": "^3.0.0 || ^4.0.0",
+        "spryker-projects/import-process": "*",
+        "spryker-projects/import-process-gui": "*",
+        "spryker-projects/import-process-spreadsheet": "*"
+    },
+    "require-dev": {
+        "spryker/code-sniffer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SprykerDemo\\": "src/SprykerDemo/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "cs-check": "phpcs -p -s --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/",
+        "cs-fix": "phpcbf -p --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
