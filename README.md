@@ -24,6 +24,18 @@ $config[KernelConstants::CORE_NAMESPACES] = [
 ];
 ```
 
+## Integration
+
+Add a link in the project to access page selecting spreadsheet with the demo data. E.g.:
+```
+// src/Pyz/Zed/ProductManagement/Presentation/Index/index.twig
+
+{% block action %}
+    {{ createActionButton('/import-process-spreadsheet-gui/index/select-sheet', 'Product Import from Spreadsheet' | trans) }}
+    // ...
+{% endblock %}
+```
+
 ## Documentation
 
 [Module Documentation](https://academy.spryker.com/developing_with_spryker/module_guide/modules.html)
